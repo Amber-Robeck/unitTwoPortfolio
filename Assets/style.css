@@ -21,7 +21,12 @@ body {
 }
 
 /* NAVAGATION BAR*/
-.sticky {
+
+nav {
+    background-color: rgb(87, 52, 87);
+}
+
+    .sticky {
     position: fixed;
     top: 0;
     width: 100%;
@@ -55,4 +60,13 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* About Me section */
+.aboutMe {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; /* viewport height */
+    background-color: gray;
 }
