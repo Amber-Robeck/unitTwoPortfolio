@@ -46,27 +46,65 @@ nav {
     }
 }
 
+
 .push {
     margin-right: auto;
 }
+
 li {
     padding:20px
 }
 
-a {
+li > a {
     color: #f5f5f6;
     text-decoration: none;
 }
 
-a:hover {
+.underline:hover {
     text-decoration: underline;
 }
+
 
 /* About Me section */
 .aboutMe {
     display:flex;
     align-items: center;
     justify-content: center;
-    height: 50vh; /* viewport height */
+    height: 65vh; /* viewport height */
     background-color: gray;
+    
 }
+/*my Projects*/
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    background-color: gray;
+    padding: 10px;
+    height: 50vh;
+  }
+  
+  .grid-container > div {
+    background-color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.grid-container > div > a {
+    color: gray;
+  }
+  .item2 {
+      grid-column: 2;
+      grid-row: 1 / span 2;
+  }
+  
+  /* This no longer is set up correctly now that I chaged placement of item 2
+  
+  @media only screen and (max-width: 500px) {
+    .item1 { grid-area: 1 / span 3 / 2 / 4; }
+    .item2 { grid-area: 3 / 3 / 4 / 4; }
+    .item3 { grid-area: 2 / 1 / 3 / 2; }
+    .item4 { grid-area: 2 / 2 / span 2 / 3; }
+    .item5 { grid-area: 3 / 1 / 4 / 2; }
+  } */
