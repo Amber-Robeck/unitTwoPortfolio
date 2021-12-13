@@ -1,6 +1,7 @@
 /* Margins on top left and right are not the same*/
 body {
     margin: auto;
+    min-width: 450px;
 }
 
 .zone {
@@ -14,6 +15,7 @@ body {
     border-radius: 4px;
     border:1px solid #bbb;
     transition: all 0.3s linear;
+    /* padding: 0; */
 }
 
 .zone:hover {
@@ -26,7 +28,7 @@ nav {
     background-color: rgb(87, 52, 87);
 }
 
-    .sticky {
+.sticky {
     position: fixed;
     top: 0;
     width: 100%;
@@ -38,14 +40,6 @@ nav {
     font-size: 0.7em;
     margin: 0;
 }
-
-@media only screen and (max-width:600px) {
-    .main-nav {
-        font-size: 0.5em;
-        padding: 0;
-    }
-}
-
 
 .push {
     margin-right: auto;
@@ -68,43 +62,140 @@ li > a {
 /* About Me section */
 .aboutMe {
     display:flex;
+    flex: wrap;
+    flex-direction: column;
+    /* min-width: 460px; */
     align-items: center;
     justify-content: center;
-    height: 65vh; /* viewport height */
+    height: 100vh; /* viewport height */
     background-color: gray;
-    
+}   
+.aboutMe > p {
+    padding: 20px;
 }
+.center {
+    text-align: center;
+}
+
+@keyframes l-ease {
+    from {left: -1400px; top: -30px;}
+    to {left: 3px; top: 5px}
+}
+
+.aboutMe > .l-ease {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(87, 52, 87);
+    font-weight: bold;
+    position: relative;
+    animation-name: l-ease;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes r-ease {
+    from {right: -1400px;}
+    to {right: 0px;}
+}
+.aboutMe > .r-ease {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(87, 52, 87);
+    font-weight: bold;
+    position: relative;
+    animation-name: r-ease;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in-out;
+}
+
 /*my Projects*/
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
+    width: auto;
+    /* max-width: 1200px; */
     grid-gap: 10px;
     background-color: gray;
     padding: 10px;
-    height: 50vh;
-  }
-  
-  .grid-container > div {
+    height: 75vh;
+}
+
+.grid-container > div {
+    max-width: auto;
     background-color: white;
     text-align: center;
     padding: 20px 0;
     font-size: 30px;
+    box-shadow: rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    /* background: url("./Assets/coming-soon.png.png"); */
+    background-size: cover;
+    /* background-attachment: fixed; */
 }
 
 .grid-container > div > a {
     color: gray;
-  }
-  .item2 {
-      grid-column: 2;
-      grid-row: 1 / span 2;
-  }
-  
-  /* This no longer is set up correctly now that I chaged placement of item 2
-  
-  @media only screen and (max-width: 500px) {
-    .item1 { grid-area: 1 / span 3 / 2 / 4; }
-    .item2 { grid-area: 3 / 3 / 4 / 4; }
-    .item3 { grid-area: 2 / 1 / 3 / 2; }
-    .item4 { grid-area: 2 / 2 / span 2 / 3; }
-    .item5 { grid-area: 3 / 1 / 4 / 2; }
+}
+
+
+/* .item1 img{
+    width: 200px;
+    height: 400px;
+    /* height: 210px; */
+    /* background: url("./Assets/coming-soon.png.png"); */
+    /* background-size: cover; */
+    /* object-fit: cover;
+} */ 
+
+
+.item2 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+/* Contact Section */
+.contact {
+    display:flex;
+    flex: wrap;
+    height: 40vh;
+    /* min-width: 460px; */
+    
+}
+/* Nav bar media query */
+@media screen and (max-width:600px) {
+    .main-nav {
+        font-size: 0.5em;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width:470px) {
+    .main-nav {
+        font-size: 0.45em;
+        padding: 0;
+    }
+}
+/* grid display media query */
+@media screen and (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        height: 90vh;}
+        .item2 {
+            grid-column: 1 / span 1;
+            
+        }
+    }
+    
+    /* This no longer is set up correctly now that I chaged placement of item 2*/
+    /* @media only screen and (max-width: 500px) {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    
+    /* @media only screen and (max-width: 500px) {
+        .item2 { grid-column: 1 / span 4; grid-row: 1;}
+        .item1 { grid-column: 2; grid-row: 2 / 1fr;}
+        .item3 { grid-column: 2; grid-row: 3 / 1fr;}
+    .item4 { grid-column: 3; grid-row: 2 / 1fr;}
+    .item5 { grid-column: 3; grid-row: 3 / 1fr;}
   } */
