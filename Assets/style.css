@@ -123,21 +123,47 @@ li > a {
 }
 
 .grid-container > div {
+    display: flex;
+    align-items: center;
     max-width: auto;
     background-color: white;
-    text-align: center;
+    /* text-align: center; */
     padding: 20px 0;
     font-size: 30px;
     box-shadow: rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
-    /* background: url("./Assets/coming-soon.png.png"); */
+    background-image: url("./coming-soon.png"); 
     background-size: cover;
+    background-position: center;
     /* background-attachment: fixed; */
 }
 
 .grid-container > div > a {
-    color: gray;
+    margin-left: 10px;
+    color: white;
+
 }
 
+/* .bounce { */
+    /* align-self: flex-end; */
+    /* width: 100px; */
+    /* height: 100px; */
+    /* background: #FFB6C1; */
+    /* animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+} */
+.bounce:hover {
+        animation-name: bounce;
+        animation-timing-function: ease;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        transform-origin: bottom;
+    }
+    @keyframes bounce {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+}
 
 /* .item1 img{
     width: 200px;
