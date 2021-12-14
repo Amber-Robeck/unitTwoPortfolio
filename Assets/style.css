@@ -1,7 +1,7 @@
 /* Margins on top left and right are not the same*/
 body {
     margin: auto;
-    min-width: 450px;
+    min-width: 520px;
 }
 
 .zone {
@@ -109,6 +109,18 @@ li > a {
     animation-duration: 2s;
     animation-fill-mode: backwards;
     animation-timing-function: ease-in-out;
+}
+
+.aboutMe img {
+    display: flex;
+    flex: wrap;
+    align-items: center;
+    /* border-radius: 50%; */
+    border-bottom-left-radius: 45% 100%;
+    border-bottom-right-radius: 45% 100%;
+    border-top-left-radius: 45% 100%;
+    border-top-right-radius: 45% 100%;
+    
 }
 
 
