@@ -39,7 +39,7 @@ nav {
     display: flex;
     list-style: none;
     font-size: 0.7em;
-    margin: 0;
+    margin: 0px;
 }
 
 .push {
@@ -72,14 +72,17 @@ li > a {
     background-color: gray;
 }   
 .aboutMe > p {
+    width: 60%;
+    height: 20vh;
     padding: 20px;
 }
 .center {
     text-align: center;
 }
 
+
 @keyframes l-ease {
-    from {left: -1400px; top: -30px;}
+    from {left: -1400px; top: -100px;}
     to {left: 3px; top: 5px}
 }
 
@@ -102,6 +105,7 @@ li > a {
 .aboutMe > .r-ease {
     width: fit-content;
     height: fit-content;
+    margin-top: 50px;
     background-color: rgb(87, 52, 87);
     font-weight: bold;
     position: relative;
@@ -115,6 +119,7 @@ li > a {
     display: flex;
     flex: wrap;
     align-items: center;
+    height: 40vh;
     /* border-radius: 50%; */
     border-bottom-left-radius: 45% 100%;
     border-bottom-right-radius: 45% 100%;
@@ -139,6 +144,7 @@ li > a {
 .grid-container > div {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     max-width: auto;
     background-color: white;
     /* text-align: center; */
@@ -152,9 +158,9 @@ li > a {
 }
 
 .grid-container > div > a {
-    margin-left: 10px;
+    margin: 10px;
     color: white;
-
+    
 }
 
 /* .bounce { */
@@ -167,16 +173,16 @@ li > a {
     transform-origin: bottom;
 } */
 .bounce:hover {
-        animation-name: bounce;
-        animation-timing-function: ease;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        transform-origin: bottom;
-    }
-    @keyframes bounce {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
+    animation-name: bounce;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
 
 /* .item1 img{
@@ -203,19 +209,9 @@ li > a {
     
 }
 /* Nav bar media query */
-@media screen and (max-width:600px) {
-    .main-nav {
-        font-size: 0.5em;
-        padding: 0;
-    }
-}
-
-@media screen and (max-width:470px) {
-    .main-nav {
-        font-size: 0.45em;
-        padding: 0;
-    }
-}
+ /* @media screen and (max-width: 1400px) {
+    
+}  */
 /* grid display media query */
 @media screen and (max-width: 900px) {
     .grid-container {
@@ -225,7 +221,29 @@ li > a {
             grid-column: 1 / span 1;
             
         }
+        .r-ease {
+            margin-top: 250px;
+        }
     }
+@media screen and (max-width:600px) {
+    .main-nav {
+        font-size: 0.5em;
+        padding: 0;
+     }
+    .r-ease {
+        margin-top: 250px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .main-nav {
+        font-size: 0.45em;
+        padding: 0;
+    }
+    .r-ease {
+        margin-top: 250px;
+    }
+}
     
     /* This no longer is set up correctly now that I chaged placement of item 2*/
     /* @media only screen and (max-width: 500px) {
