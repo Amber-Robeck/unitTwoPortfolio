@@ -23,8 +23,9 @@ body {
 }
 
 /* NAVAGATION BAR*/
-
+/* Added z index to make animation properties slide under nav bar */
 nav {
+    z-index: 2;
     background-color: rgb(87, 52, 87);
 }
 
@@ -109,6 +110,7 @@ li > a {
     animation-fill-mode: backwards;
     animation-timing-function: ease-in-out;
 }
+
 
 /*my Projects*/
 .grid-container {
